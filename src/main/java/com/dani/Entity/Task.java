@@ -13,8 +13,15 @@ import javax.persistence.Table;
 @Table(name="tasks")
 public class Task implements Serializable {
 	
+	public Task(){}
 	
-	
+	public Task(long id, String descripcion, String estado) {
+		super();
+		this.id = id;
+		this.descripcion = descripcion;
+		this.estado = estado;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id

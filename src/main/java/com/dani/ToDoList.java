@@ -1,25 +1,53 @@
 package com.dani;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dani.Entity.Task;
 import com.dani.dao.ITaskService;
 
-@RestController
-@RequestMapping(value="todolist")
+import antlr.TokenStreamRetryException;
 
+@RestController
 public class ToDoList {
 	
 	@Autowired
 	private ITaskService taskservice;
 	
-	@GetMapping(value="tasks")
+	
+	
+	@RequestMapping(value="/alltasks")
 	public List<Task> getTask(){
 		return taskservice.get_task();
 	}
+	@RequestMapping(value="/alltasks/{id}")
+	public Optional<Task> getTask_byId(@PathVariable Long id){
+		return taskservice.get_task_byId(id);
+	}
+	@PostMapping(value="/addtask") 
+	public Task addTask(@RequestBody Task tarea) {
+		return taskservice.add_tarea(tarea);
+	}
+	@PutMapping(value ="/tasks/{id}")
+	public Task updateTask(@RequestBody Task newtarea,@PathVariable Long id) {
+		Task task = taskservice.update_task(id, newtarea);
+		return task;
+	}
+	@DeleteMapping(value="/delete/{id}") 
+	public void del_task(@PathVariable Long id) {
+		taskservice.borrar_tarea(id);
+	}
+	
+	
 }
