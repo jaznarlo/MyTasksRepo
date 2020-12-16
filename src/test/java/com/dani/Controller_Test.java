@@ -76,7 +76,7 @@ public class Controller_Test {
 		when(taskservice.add_tarea(Mockito.any(Task.class))).thenReturn(task);
 						
 		RequestBuilder request_add = MockMvcRequestBuilders
-				.post("/addtasks")
+				.post("/addtask")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("{\"id\":4,\"descripcion\":\"Hacer la comida\",\"estado\":\"Pending\"}")
 				.accept(MediaType.APPLICATION_JSON);
