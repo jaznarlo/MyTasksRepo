@@ -21,7 +21,7 @@ import com.dani.dao.TaskService;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 
-public class Repository_test {
+public class RepositoryTest {
 	
 	@Autowired
 	private TaskService taskservice;

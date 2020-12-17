@@ -28,7 +28,7 @@ import com.dani.dao.ITaskService;
 
 @WebMvcTest(ToDoList.class)
 @RunWith(SpringRunner.class)
-public class Controller_Test {
+public class ControllerTest {
 	 
 	@Autowired
 	private MockMvc mock;
