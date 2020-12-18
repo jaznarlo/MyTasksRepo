@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dani.Entity.Task;
@@ -27,11 +28,11 @@ public class ToDoList {
 	
 	
 	
-	@RequestMapping(value="/alltasks")
+	@RequestMapping(value="/alltasks", method = RequestMethod.GET)
 	public List<Task> getTask(){
 		return taskservice.get_task();
 	}
-	@RequestMapping(value="/task/{id}")
+	@RequestMapping(value="/task/{id}", method = RequestMethod.GET)
 	public Optional<Task> getTask_byId(@PathVariable Long id){
 		return taskservice.get_task_byId(id);
 	}
