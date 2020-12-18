@@ -31,20 +31,20 @@ public class ToDoList {
 	public List<Task> getTask(){
 		return taskservice.get_task();
 	}
-	@RequestMapping(value="/alltasks/{id}")
+	@RequestMapping(value="/task/{id}")
 	public Optional<Task> getTask_byId(@PathVariable Long id){
 		return taskservice.get_task_byId(id);
 	}
-	@PostMapping(value="/addtask") 
+	@PostMapping(value="/task") 
 	public Task addTask(@RequestBody Task tarea) {
 		return taskservice.add_tarea(tarea);
 	}
-	@PutMapping(value ="/tasks/{id}")
+	@PutMapping(value ="/task/{id}")
 	public Task updateTask(@RequestBody Task newtarea,@PathVariable Long id) {
 		Task task = taskservice.update_task(id, newtarea);
 		return task;
 	}
-	@DeleteMapping(value="/delete/{id}") 
+	@DeleteMapping(value="/task/{id}") 
 	public void del_task(@PathVariable Long id) {
 		taskservice.borrar_tarea(id);
 	}
