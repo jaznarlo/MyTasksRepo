@@ -1,4 +1,4 @@
-package com.dani;
+package com.jorge;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dani.Entity.Task;
-import com.dani.dao.ITaskService;
+import com.jorge.Entity.Task;
+import com.jorge.dao.ITaskService;
 
 import antlr.TokenStreamRetryException;
 

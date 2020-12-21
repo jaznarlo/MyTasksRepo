@@ -1,9 +1,9 @@
-package com.dani.dao;
+package com.jorge.dao;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.dani.Entity.Task;
+import com.jorge.Entity.Task;
 
 public interface ITaskService {
 	public List<Task> get_task();

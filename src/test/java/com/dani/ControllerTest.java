@@ -22,8 +22,9 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.dani.Entity.Task;
-import com.dani.dao.ITaskService;
+import com.jorge.ToDoList;
+import com.jorge.Entity.Task;
+import com.jorge.dao.ITaskService;
 
 
 @WebMvcTest(ToDoList.class)

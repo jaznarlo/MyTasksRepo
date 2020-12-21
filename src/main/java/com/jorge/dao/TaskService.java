@@ -1,4 +1,4 @@
-package com.dani.dao;
+package com.jorge.dao;
 
 
 
@@ -8,7 +8,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dani.Entity.Task;
+import com.jorge.Entity.Task;
 
 @Service
 public class TaskService implements ITaskService {

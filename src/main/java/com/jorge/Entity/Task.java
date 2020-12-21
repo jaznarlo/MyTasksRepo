@@ -1,4 +1,4 @@
-package com.dani.Entity;
+package com.jorge.Entity;
 
 import java.io.Serializable;
 
